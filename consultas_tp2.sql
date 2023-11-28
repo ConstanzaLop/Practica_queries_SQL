@@ -25,3 +25,12 @@ ON p.id_content = c.id_content
 WHERE country IN ('United States', 'India', 'Japan', 'Spain', 'Mexico')
 GROUP BY country
 ORDER BY country ASC;
+
+--D. Mostrar las películas clasificadas como drama por netflix, que hayan ganado el Oscar entre 2010 y 2020 y que estén en esta plataforma.
+
+SELECT c.title_content as titulo,
+FROM content c
+JOIN production p ON c.id_content = p.id_content
+JOIN oscar o ON c.id_content = o.id_content
+WHERE c.listed_in LIKE '%Drama%' AND o.winner=1
+AND o.year_ceremony BETWEEN 2010 and 2020;
