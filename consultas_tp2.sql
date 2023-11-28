@@ -57,3 +57,11 @@ FROM netflix.oscar
 WHERE imdb BETWEEN 7 AND 9
 AND budget IS NOT NULL
 AND box_office IS NOT NULL;
+
+--H. Obtener las películas que ganaron el Oscar a Best Picture, ordenadas de manera descendente por año ganador.
+
+SELECT title_oscar as titulo
+FROM netflix.oscar
+WHERE winner=1
+AND category='BEST PICTURE'
+ORDER BY year_ceremony;
