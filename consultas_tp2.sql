@@ -15,3 +15,4 @@ INNER JOIN production as p
 ON p.id_content = c.id_content
 WHERE p.runtime > 70
 ORDER BY c.title_content ASC;
+
