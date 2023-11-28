@@ -73,3 +73,12 @@ FROM netflix.oscar
 WHERE imdb BETWEEN 7 AND 9
 GROUP BY title_oscar
 ORDER BY title_oscar ASC, year_ceremony DESC;
+
+--J. Mostrar una lista de las películas originales de netflix ganadoras del oscar (si las hubiera) mostrando las columnas title, category, genre runtime, el imdb_score, la premiere y el año de la ceremonia.
+
+SELECT c.title_content as titulo, o.category as categoria, p.genre as genero, p.runtime as
+duracion, p.premiere as estreno, o.year_ceremony as anio_ceremonia
+FROM content AS c
+INNER JOIN oscar AS o ON c.id_content=o.id_content
+INNER JOIN production AS p ON c.id_content=p.id_content
+WHERE o.winner=1;
