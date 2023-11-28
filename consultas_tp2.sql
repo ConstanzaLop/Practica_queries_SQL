@@ -65,3 +65,11 @@ FROM netflix.oscar
 WHERE winner=1
 AND category='BEST PICTURE'
 ORDER BY year_ceremony;
+
+--I. Mostrar el título y el año de ceremonia de los oscar para las peliculas puntuadas por IMDB entre 7 y 9. Ordenarlos alfabéticamente por títulos y de mayor a menor por año de ceremonia.
+
+SELECT title_oscar as titulo, year_ceremony as anio_ceremonia
+FROM netflix.oscar
+WHERE imdb BETWEEN 7 AND 9
+GROUP BY title_oscar
+ORDER BY title_oscar ASC, year_ceremony DESC;
