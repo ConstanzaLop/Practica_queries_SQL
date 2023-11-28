@@ -48,3 +48,12 @@ SELECT COUNT(title_production) AS cantidad_de_titulos, genre as genero
 FROM netflix.production
 GROUP by genre
 ORDER BY cantidad_de_titulos DESC, genre ASC;
+
+--G. Analizar la relación entre Budget y Box Office. Calcular el ratio Budget/Box Office para las peliculas con un puntaje IMDB entre 7 y 9, sin mostrar nulos y no repetidos.
+
+SELECT distinct(title_oscar) as titulo, ROUND(budget_x_million/box_office_x_million*100) AS
+ratio_presupuesto_recaudacion
+FROM netflix.oscar
+WHERE imdb BETWEEN 7 AND 9
+AND budget IS NOT NULL
+AND box_office IS NOT NULL;
