@@ -34,3 +34,10 @@ JOIN production p ON c.id_content = p.id_content
 JOIN oscar o ON c.id_content = o.id_content
 WHERE c.listed_in LIKE '%Drama%' AND o.winner=1
 AND o.year_ceremony BETWEEN 2010 and 2020;
+
+--E. Seleccionar el título y el género de las películas puntuadas por IMDB entre 7 y 9. Obtener los títulos en idioma inglés.
+
+SELECT o.title_oscar as titulo, p.genre as genero
+FROM oscar AS o
+JOIN production p ON o.id_content = p.id_content
+WHERE o.imdb BETWEEN 7 AND 9;
