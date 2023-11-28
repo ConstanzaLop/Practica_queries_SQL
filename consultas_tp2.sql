@@ -82,3 +82,10 @@ FROM content AS c
 INNER JOIN oscar AS o ON c.id_content=o.id_content
 INNER JOIN production AS p ON c.id_content=p.id_content
 WHERE o.winner=1;
+
+--K. Mostrar una lista de las nominaciones al oscar de películas originales de netflix (si las hubiera) que no fueron ganadoras del premio,mostrando las columnas título, category y año de la ceremonia.
+
+SELECT c.title_content as titulo, o.category as categoria, o.year_ceremony as anio_ceremonia
+FROM content AS c
+INNER JOIN oscar AS o ON c.id_content=o.id_content
+WHERE o.winner=0;
