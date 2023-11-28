@@ -16,3 +16,12 @@ ON p.id_content = c.id_content
 WHERE p.runtime > 70
 ORDER BY c.title_content ASC;
 
+--C. Sume el Runtime de las películas que tengan como único país de origen United States, India, Japan, Spain y Mexico, discriminando y ordenando por país. Incluya la columna género.
+
+SELECT SUM(runtime) AS runtime_total, countries pais, genre as genero
+FROM content AS c
+JOIN production AS p
+ON p.id_content = c.id_content
+WHERE country IN ('United States', 'India', 'Japan', 'Spain', 'Mexico')
+GROUP BY country
+ORDER BY country ASC;
