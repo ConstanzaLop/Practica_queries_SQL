@@ -41,3 +41,10 @@ SELECT o.title_oscar as titulo, p.genre as genero
 FROM oscar AS o
 JOIN production p ON o.id_content = p.id_content
 WHERE o.imdb BETWEEN 7 AND 9;
+
+--F. Cuente la cantidad de títulos de cada género de la tabla productions. Ordene de manera descendente por las cantidades y ascendente por el género.
+
+SELECT COUNT(title_production) AS cantidad_de_titulos, genre as genero
+FROM netflix.production
+GROUP by genre
+ORDER BY cantidad_de_titulos DESC, genre ASC;
