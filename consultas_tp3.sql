@@ -34,3 +34,11 @@ SELECT
    FROM netflix.content
    GROUP BY type, rating
    ORDER BY rating ASC, type ASC;
+
+--H.  Mostrar la cantidad  de películas en los idiomas portugués, francés, alemán, italiano y español, ordenados por cantidad, de mayor a menor.
+SELECT
+   COUNT(*) AS cantidad_peliculas, language
+   FROM netflix.production
+   WHERE language IN ('Portuguese','French','Dutch','Italian','Spanish')
+   GROUP BY language
+   ORDER BY cantidad_peliculas DESC;
