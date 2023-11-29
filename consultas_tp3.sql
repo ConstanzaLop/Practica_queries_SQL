@@ -17,3 +17,8 @@ WHERE country = 'Argentina';
 SELECT id_production, title_production, genre, language, imdb_score
 FROM netflix .production
 WHERE imdb_score >7.5;
+
+--E.  Mostrar las columnas id_content, type, title_content, listed_in de los registros en los que el rating público general o admitido para todas las edades.
+SELECT id_content, type, title_content, listed_in
+FROM netflix .content
+WHERE rating = 'PG' OR rating = 'G';
