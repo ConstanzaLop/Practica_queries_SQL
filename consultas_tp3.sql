@@ -22,3 +22,8 @@ WHERE imdb_score >7.5;
 SELECT id_content, type, title_content, listed_in
 FROM netflix .content
 WHERE rating = 'PG' OR rating = 'G';
+
+--F.  Obtener una lista con las columnas id_production, title_production, genre de los registros en que runtime sea menor o igual a 105 minutos y que además sea de al menos 60 minutos.
+SELECT id_production, title_production, genre
+FROM netflix .production
+WHERE runtime <= 105 AND runtime >= 60;
