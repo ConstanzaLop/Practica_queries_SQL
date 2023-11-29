@@ -12,3 +12,8 @@ FROM netflix.production;
 SELECT id_content, type, title_content, director, cast, rating, duration, listed_in
 FROM netflix .content
 WHERE country = 'Argentina';
+
+--D.  Presentar un listado con las columnas id_production, title_production, genre, language, imdb_score de los registros de la tabla en las que el imdb_score sea superior a 7.5.
+SELECT id_production, title_production, genre, language, imdb_score
+FROM netflix .production
+WHERE imdb_score >7.5;
