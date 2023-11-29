@@ -27,3 +27,10 @@ WHERE rating = 'PG' OR rating = 'G';
 SELECT id_production, title_production, genre
 FROM netflix .production
 WHERE runtime <= 105 AND runtime >= 60;
+
+--G.  Obtener la cantidad de registros discriminando por type y rating, ordenados alfabéticamente por rating y por type.
+SELECT
+   COUNT(*) AS cantidad_registros, rating, type
+   FROM netflix.content
+   GROUP BY type, rating
+   ORDER BY rating ASC, type ASC;
